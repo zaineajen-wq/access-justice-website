@@ -4,3 +4,12 @@
 @media(max-width:980px){nav{gap:14px}nav a{font-size:.77rem}.logo strong{font-size:1.14rem}.hero-grid{grid-template-columns:1fr .8fr}.hero-art-inner{width:220px;height:300px}.hero-art::before{width:350px;height:350px}.hero-art-scale{font-size:5rem}.mobile-grid{gap:35px}}
 @media(max-width:720px){.wrap{width:min(94%,560px)}.header-inner{min-height:85px;align-items:flex-start;flex-direction:column;gap:8px;padding:12px 0}.logo-icon{font-size:1.95rem}.logo strong{font-size:1.06rem}.logo small{font-size:.53rem}nav{overflow-x:auto;width:100%;padding:0 0 4px;gap:16px;white-space:nowrap}nav a{font-size:.76rem}nav .nav-contact{padding:4px 9px}.hero-grid,.mobile-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-copy{padding:65px 0 30px}.hero-art{min-height:300px;margin-bottom:25px}.hero-art::before{width:280px;height:280px;right:10%}.hero-art-inner{width:195px;height:245px}.hero-art-scale{font-size:3.5rem}.art-caption{font-size:.72rem}.trust-grid{flex-direction:column;text-align:center;gap:7px}.section{padding:65px 0}.service-grid,.combo-grid,.steps{grid-template-columns:1fr}.fee-row{align-items:flex-start;flex-direction:column;gap:10px;padding:20px}.fee-amount{text-align:left}.mobile-illustration{min-height:300px}.illustration-frame{min-height:240px}.illustration-title{font-size:2rem}.plant-symbol{font-size:3rem}.foot{flex-direction:column}.contact-section{padding:60px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+/* Published client inquiry form */
+.inquiry-section{margin-top:52px;border-top:1px solid #647363;padding-top:40px}
+.inquiry-section h3{font:500 clamp(1.5rem,3vw,2rem) 'Playfair Display',Georgia,serif;color:#f8f1e1;margin:0 0 14px}
+.inquiry-section>p{max-width:750px;color:#d5dbd0;line-height:1.7}
+.inquiry-form{margin-top:24px;background:#fff;border-radius:12px;overflow:hidden;max-width:850px}
+.inquiry-form iframe{display:block;width:100%;height:1000px;border:0;background:#fff}
+.inquiry-alt{margin-top:15px;font-size:.9rem}
+.inquiry-alt a{color:#f8dca1;text-decoration:underline}
+@media(max-width:720px){.inquiry-section{margin-top:36px;padding-top:30px}.inquiry-form iframe{height:1100px}}
