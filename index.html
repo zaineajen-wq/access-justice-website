@@ -113,5 +113,62 @@
 <section class="section steps-section"><div class="wrap"><p class="eyebrow">HOW IT WORKS</p><h2>Three clear steps.</h2><div class="steps"><article><span>01</span><h3>Tell us about your matter</h3><p>Start with a brief, free inquiry to determine whether the service is a fit.</p></article><article><span>02</span><h3>Choose your service</h3><p>We discuss the appropriate scope and confirm the fee and exclusions.</p></article><article><span>03</span><h3>Move forward</h3><p>After conflicts and intake checks, we confirm the engagement in writing before legal work begins.</p></article></div></div></section>
 <section class="contact-section" id="contact"><div class="wrap contact-grid"><div><p class="eyebrow">GET IN TOUCH</p><h2>Let's talk about<br>what you need.</h2><p>St. Catharines and surrounding areas · Ontario</p></div><div class="contact-links"><p><strong>Eugenia Mototolea, Licensed Paralegal (LSO)</strong></p><a href="tel:+19053253771">(905) 325-3771</a><a href="mailto:info@accessjusticeparalegal.ca">info@accessjusticeparalegal.ca</a><p>Limited-scope legal assistance & mobile services by appointment.</p></div></div><div class="wrap inquiry-section"><h3>Send an initial inquiry</h3><p>Complete our initial inquiry and conflict-check form so we can review your request and determine next steps. Please do not include confidential documents or detailed sensitive information at this stage. Sending an inquiry does not create a paralegal-client relationship.</p><div class="inquiry-form"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdY4KEK-SELUNuZ8JzN5_Kwy2pzI6Fr7aSwnadqhgM46NVULQ/viewform?embedded=true" title="Access Justice initial inquiry and conflict-check form" loading="lazy">Loading…</iframe></div><p class="inquiry-alt">Having trouble seeing the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY4KEK-SELUNuZ8JzN5_Kwy2pzI6Fr7aSwnadqhgM46NVULQ/viewform" target="_blank" rel="noopener noreferrer">Open the inquiry form in a new tab</a>.</p></div></section>
 </main>
-<footer><div class="wrap foot"><span>© 2026 Access Justice Paralegal Services</span><span>Support · Prepare · Move Forward</span></div></footer>
+<footer><div class="wrap foot"><span>© 2026 Access Justice Paralegal Services</span><span>Support · Prepare · Move Forward</span><button type="button" id="analytics-settings">Analytics preferences</button></div></footer>
+<aside id="analytics-notice" aria-label="Website analytics" hidden style="position:fixed;right:1rem;bottom:1rem;z-index:1000;max-width:24rem;padding:1rem;background:#fff;color:#203327;border:1px solid #203327;border-radius:.5rem;box-shadow:0 4px 20px #0003">
+  <p>With your permission, we use Google Analytics cookies to count visits and see where visitors come from. Google receives page visit and device information. <a href="https://policies.google.com/technologies/partner-sites">How Google uses this data</a>.</p>
+  <button type="button" id="analytics-allow">Allow analytics</button>
+  <button type="button" id="analytics-decline">Decline</button>
+</aside>
+<script>
+  (() => {
+    const measurementId = 'G-MH7PPTQ9FN';
+    const preferenceKey = 'access-justice-analytics';
+    const notice = document.getElementById('analytics-notice');
+    let preference = localStorage.getItem(preferenceKey);
+
+    function startAnalytics() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', measurementId, {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_domain: location.hostname,
+        page_location: location.origin + location.pathname,
+        page_referrer: document.referrer ? new URL(document.referrer).origin : ''
+      });
+
+      const tag = document.createElement('script');
+      tag.async = true;
+      tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+      document.head.append(tag);
+    }
+
+    document.getElementById('analytics-settings').addEventListener('click', () => {
+      notice.hidden = false;
+      document.getElementById('analytics-allow').focus();
+    });
+
+    document.getElementById('analytics-allow').addEventListener('click', () => {
+      localStorage.setItem(preferenceKey, 'allow');
+      notice.hidden = true;
+      if (preference !== 'allow') startAnalytics();
+      preference = 'allow';
+    });
+
+    document.getElementById('analytics-decline').addEventListener('click', () => {
+      localStorage.setItem(preferenceKey, 'decline');
+      notice.hidden = true;
+      if (preference !== 'allow') return;
+      window['ga-disable-' + measurementId] = true;
+      for (const name of ['_ga', '_ga_' + measurementId.slice(2)]) {
+        document.cookie = name + '=; Max-Age=0; Path=/; Domain=' + location.hostname;
+      }
+      location.reload();
+    });
+
+    notice.hidden = preference !== null;
+    if (preference === 'allow') startAnalytics();
+  })();
+</script>
 </body></html>
